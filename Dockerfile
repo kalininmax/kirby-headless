@@ -14,13 +14,17 @@ RUN apt-get update && apt-get install -y \
 # 2. Включаем mod_rewrite
 RUN a2enmod rewrite
 
-# 3. Установка Composer
+# 3. Настройка окружения Composer
+ENV COMPOSER_HOME=/.composer
+RUN mkdir -p /.composer && chown -R 1000:33 /.composer
+
+# 4. Установка Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# 4. Устанавливаем рабочую директорию
+# 5. Устанавливаем рабочую директорию
 WORKDIR /var/www/html
 
-# 5. Копируем только файлы зависимостей
+# 6. Копируем только файлы зависимостей
 COPY composer.json composer.lock ./
 
 # 6. Устанавливаем зависимости
