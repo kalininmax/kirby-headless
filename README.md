@@ -9,6 +9,11 @@
 ```bash
 git clone <url-вашего-репозитория> .
 ```
+Создайте файл `.env`:
+
+```bash
+cp .env.example .env
+```
 
 ### 2. Запуск Docker
 Соберите образ и запустите контейнер:
@@ -16,14 +21,6 @@ git clone <url-вашего-репозитория> .
 docker-compose up -d --build
 ```
 Панель управления доступна по адресу: `http://localhost:8080/panel`. Создайте пользователя при первом входе.
-
-## ⚙️ Настройка API
-
-Для работы Headless API создайте файл `.env`:
-
-```bash
-cp .env.example .env
-```
 
 ## 📡 Использование API
 
@@ -67,6 +64,25 @@ fetch(API_URL, {
 - **Зайти внутрь контейнера:** `docker exec -it kirby-headless bash`
 - **Обновить зависимости:** `docker exec -it kirby-headless composer update`
 - **Просмотр логов:** `docker logs -f kirby-headless`
+
+## 📦 Работа с плагинами и зависимостями
+
+Все команды Composer должны выполняться внутри Docker-контейнера, чтобы изменения применились к изолированной папке `vendor`.
+
+### 1. Установка нового плагина
+```bash
+docker exec -it kirby-headless composer require some-name/plugin-name
+```
+
+### 2. Обновление всех плагинов
+```bash
+docker exec -it kirby-headless composer update
+```
+
+### 3. Удаление плагина
+```bash
+docker exec -it kirby-headless composer remove some-name/plugin-name
+```
 
 ## 💡 Важно
 
