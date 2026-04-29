@@ -71,17 +71,17 @@ fetch(API_URL, {
 
 ### 1. Установка нового плагина
 ```bash
-docker exec -it kirby-headless composer require some-name/plugin-name
+docker exec -u root -it kirby-headless composer require <vendor/package>
 ```
 
 ### 2. Обновление всех плагинов
 ```bash
-docker exec -it kirby-headless composer update
+docker exec -u root -it kirby-headless composer update
 ```
 
 ### 3. Удаление плагина
 ```bash
-docker exec -it kirby-headless composer remove some-name/plugin-name
+docker exec -u root -it kirby-headless composer remove <vendor/package>
 ```
 
 ## 💡 Важно
