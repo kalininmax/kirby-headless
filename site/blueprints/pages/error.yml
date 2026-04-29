@@ -1,0 +1,18 @@
+title: Error Page
+icon: cancel
+
+tabs:
+  content:
+    icon: text
+    fields:
+      contentTitle:
+        label: Title
+        type: text
+
+      contentText:
+        label: Text
+        type: textarea
+        buttons: false
+
+  seo: tabs/seo
+

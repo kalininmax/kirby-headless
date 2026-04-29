@@ -1,0 +1,74 @@
+title: Site
+
+tabs:
+  content:
+    icon: text
+    sections:
+      pages:
+        type: pages
+        image: icon
+
+  seo: tabs/seo
+
+  header:
+    icon: grid-top
+    sections:
+      headerFields:
+        type: fields
+        fields:
+          navList:
+            label: Navigation
+            type: structure
+            fields:
+              text:
+                type: text
+                required: true
+              url:
+                label: URL
+                type: text
+                required: true
+                icon: url
+
+  contacts:
+    icon: info-card
+    sections:
+      contactsFields:
+        type: fields
+        fields:
+          contactsTel:
+            width: 1/4
+            label: Tel
+            type: tel
+          contactsEmail:
+            width: 1/4
+            label: E-mail
+            type: email
+          copyright:
+            width: 1/4
+            type: text
+          socials:
+            width: 1/2
+            type: structure
+            columns:
+              url: true
+            fields:
+              name:
+                width: 1/3
+                type: text
+                required: true
+              url:
+                width: 2/3
+                label: URL
+                type: url
+                required: true
+              icon:
+                label: Icon
+                type: files
+                required: true
+                query: page.images
+                layout: cards
+                multiple: false
+                size: small
+                uploads: image
+                image:
+                  ratio: 1/1

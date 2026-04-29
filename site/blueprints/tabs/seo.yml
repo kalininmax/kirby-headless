@@ -1,0 +1,36 @@
+label: SEO
+icon: search
+columns:
+  left:
+    sections:
+      seoLeftCol:
+        type: fields
+        fields:
+          metaTitle:
+            label: Title
+            type: text
+            maxlength: 60
+            help: Max. 60 chars
+          metaDescription:
+            label: Description
+            type: textarea
+            buttons: false
+            maxlength: 160
+            help: Max. 160 chars
+          metaKeywords:
+            label: Keywords
+            type: text
+            maxlength: 160
+            help: Max. 160 chars
+          metaOgImage:
+            label: Image
+            type: files
+            query: page.images
+            layout: cards
+            multiple: false
+            size: large
+            uploads: image
+            query: page.images
+            image:
+              ratio: 1200/630
+            help: 1200x630

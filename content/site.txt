@@ -1,0 +1,37 @@
+Title: Site Title
+
+----
+
+Metatitle: Kirby CMS Starter
+
+----
+
+Metadescription: Kirby CMS Headless Starter Kit
+
+----
+
+Metakeywords: 
+
+----
+
+Metaogimage: - file://xm3ac3sy4f7ldokr
+
+----
+
+Navlist: 
+
+----
+
+Contactstel: 
+
+----
+
+Contactsemail: 
+
+----
+
+Copyright: 
+
+----
+
+Socials: 

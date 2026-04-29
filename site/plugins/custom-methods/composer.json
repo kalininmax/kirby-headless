@@ -1,0 +1,13 @@
+{
+  "name": "sp/custom-methods",
+  "description": "Custom methods for the Kirby site",
+  "type": "kirby-plugin",
+  "license": "MIT",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Sborka Project",
+      "email": "hello@sborkaproject.com"
+    }
+  ]
+}

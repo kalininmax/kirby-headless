@@ -1,0 +1,23 @@
+title: Home Page
+icon: home
+
+tabs:
+  content:
+    icon: text
+    fields:
+      previewInfo:
+        extends: fields/frontend-preview
+
+      introHeadline:
+        label: Intro
+        type: headline
+      introTitle:
+        width: 1/2
+        label: Title
+        type: text
+
+      line1:
+        type: line
+
+  seo: tabs/seo
+

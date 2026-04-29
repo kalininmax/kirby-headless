@@ -1,0 +1,13 @@
+services:
+  kirby:
+    container_name: kirby-headless
+    user: "1000:33"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/vendor
+    restart: always

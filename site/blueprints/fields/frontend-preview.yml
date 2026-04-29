@@ -1,0 +1,3 @@
+label: Frontend preview
+type: info
+text: "{{ page.frontendUrl }}"
