@@ -3,6 +3,10 @@
 use Kirby\Cms\Url;
 
 Kirby::plugin('sp/custom-methods', [
+  'panel' => [
+    'js' => 'index.js'
+  ],
+
   'fieldMethods' => [
     'typograf' => function ($field) {
       $t = new \Akh\Typograf\Typograf();
@@ -17,10 +21,10 @@ Kirby::plugin('sp/custom-methods', [
       }
 
       return [
-        'src' => $this->url(),
-        'width' => $this->width(),
+        'src'    => $this->url(),
+        'width'  => $this->width(),
         'height' => $this->height(),
-        'alt' => $this->alt()->value(),
+        'alt'    => $this->alt()->value(),
       ];
     }
   ],
@@ -36,17 +40,38 @@ Kirby::plugin('sp/custom-methods', [
 
       $keywords = $page->metaKeywords()->or($site->metaKeywords())->value();
 
-      $image = $page->metaOgImage()->toFile()?->getImageData();
+      $image = $page->metaOgImage()?->toFile()?->getImageData();
 
       if (!$image) {
-        $image = $site->metaOgImage()->toFile()?->getImageData();
+        $image = $site->metaOgImage()?->toFile()?->getImageData();
       }
 
       return [
-        'title' => $title,
-        'description'=> $description,
-        'keywords' => $keywords,
-        'image' => $image
+        'title'       => $title,
+        'description' => $description,
+        'keywords'    => $keywords,
+        'image'       => $image
+      ];
+    },
+  ],
+
+  'siteMethods' => [
+    'metadata' => function () {
+      $site = $this;
+
+      $title = $site->metaTitle()->or($site->title())->value();
+
+      $description = $site->metaDescription()?->value();
+
+      $keywords = $site->metaKeywords()?->value();
+
+      $image = $site->metaOgImage()?->toFile()?->getImageData();
+
+      return [
+        'title'       => $title,
+        'description' => $description,
+        'keywords'    => $keywords,
+        'image'       => $image
       ];
     },
   ],

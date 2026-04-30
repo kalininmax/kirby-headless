@@ -1,13 +1,18 @@
 <?php
 
+/* INTRO */
+$intro = [
+  'title' => $page->introTitle()->typograf(),
+  'text'  => $page->introText()->kt()->typograf(),
+];
+
 $data = [
   'template' => $page->intendedTemplate()->name(),
-  'slug' => $page->isHomePage() ? '' : $page->slug(),
-  'title' => $page->title()->value(),
+  'slug'     => $page->isHomePage() ? '' : $page->slug(),
+  'title'    => $page->title()->value(),
   'metadata' => $page->metadata(),
-  'content' => [
-    'title' => $page->title()->typograf(),
-    'text' => $page->text()->kt()->typograf(),
+  'content'  => [
+    'intro' => $intro,
   ],
 ];
 

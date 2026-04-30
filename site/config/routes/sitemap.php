@@ -4,7 +4,7 @@ use Kirby\Http\Response;
 
 return [
   'pattern' => '/sitemap',
-  'method' => 'GET',
+  'method'  => 'GET',
   'action'  => function () {
     $site = site();
     $list = [];

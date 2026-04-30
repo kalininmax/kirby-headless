@@ -2,6 +2,30 @@ Title: Home
 
 ----
 
+Introtitle: Intro title
+
+----
+
+Introtext: Home page intro text.
+
+----
+
+Metatitle: 
+
+----
+
+Metadescription: 
+
+----
+
+Metakeywords: 
+
+----
+
+Metaogimage: 
+
+----
+
 Text: Текст на главной странице. Ссылка - (link: https://example.com text: example.com)
 
 ----

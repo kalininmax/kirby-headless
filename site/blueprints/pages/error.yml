@@ -1,6 +1,8 @@
 title: Error Page
 icon: cancel
 
+options: false
+
 tabs:
   content:
     icon: text

@@ -1,20 +1,31 @@
 title: Home Page
 icon: home
 
+buttons:
+  open: true
+  settings: true
+  languages: true
+
+options:
+  status: false
+  duplicate: false
+  sort: false
+  preview: '{{ page.frontendUrl }}'
+
 tabs:
   content:
     icon: text
     fields:
-      previewInfo:
-        extends: fields/frontend-preview
-
       introHeadline:
         label: Intro
         type: headline
       introTitle:
-        width: 1/2
         label: Title
         type: text
+      introText:
+        label: Text
+        type: textarea
+        buttons: false
 
       line1:
         type: line

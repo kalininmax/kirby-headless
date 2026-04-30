@@ -1,4 +1,11 @@
-title: Site
+title: Panel
+
+buttons:
+  open: true
+  languages: true
+
+options:
+  preview: '{{ site.frontendUrl }}'
 
 tabs:
   content:
@@ -24,7 +31,7 @@ tabs:
                 type: text
                 required: true
               url:
-                label: URL
+                label: Link
                 type: text
                 required: true
                 icon: url
@@ -36,7 +43,7 @@ tabs:
         type: fields
         fields:
           contactsTel:
-            width: 1/4
+            width: 1/6
             label: Tel
             type: tel
           contactsEmail:
@@ -47,7 +54,7 @@ tabs:
             width: 1/4
             type: text
           socials:
-            width: 1/2
+            width: 2/6
             type: structure
             columns:
               url: true
@@ -61,14 +68,3 @@ tabs:
                 label: URL
                 type: url
                 required: true
-              icon:
-                label: Icon
-                type: files
-                required: true
-                query: page.images
-                layout: cards
-                multiple: false
-                size: small
-                uploads: image
-                image:
-                  ratio: 1/1

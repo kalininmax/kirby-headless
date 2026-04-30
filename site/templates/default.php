@@ -2,12 +2,12 @@
 
 $data = [
   'template' => $page->intendedTemplate()->name(),
-  'slug' => $page->isHomePage() ? '' : $page->slug(),
-  'title' => $page->title()->value(),
+  'slug'     => $page->isHomePage() ? '' : $page->slug(),
+  'title'    => $page->title()->value(),
   'metadata' => $page->metadata(),
-  'content' => [
+  'content'  => [
     'title' => $page->title()->typograf(),
-    'text' => $page->text()->kt()->typograf(),
+    'text'  => $page->text()->kt()->typograf(),
   ],
 ];
 

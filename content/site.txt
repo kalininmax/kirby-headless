@@ -34,4 +34,14 @@ Copyright:
 
 ----
 
-Socials: 
+Socials:
+
+- 
+  name: Telegram
+  url: https://t.me/example
+- 
+  name: WhatsApp
+  url: https://wa.me/example
+- 
+  name: Instagram
+  url: https://www.instagram.com/example
