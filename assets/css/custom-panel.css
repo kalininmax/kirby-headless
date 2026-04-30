@@ -1,0 +1,9 @@
+.k-button.k-dropdown-item[aria-disabled="true"],
+.k-button.k-dropdown-item[href*="preview/changes"] {
+  display: none;
+}
+
+.k-navigate hr {
+  display: none;
+}
+
