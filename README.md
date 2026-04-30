@@ -29,7 +29,7 @@ docker-compose up -d --build
 `Authorization: Bearer <your-secret-token>`
 
 - `GET /home` — Данные главной страницы.
-- `GET /error` — Данные для страницы 404.
+- `GET /globals` — Глобальные данные.
 - `GET /some-page` — Данные других страниц.
 
 **Пример fetch запроса:**
@@ -37,7 +37,7 @@ docker-compose up -d --build
 const API_URL = 'http://localhost:8080';
 const TOKEN = 'your-secret-token';
 
-fetch(API_URL, {
+fetch(`${API_URL}/home`, {
   headers: {
     'Authorization': `Bearer ${TOKEN}`,
     'Accept': 'application/json'
@@ -52,17 +52,18 @@ fetch(API_URL, {
   })
   .then(data => {
     console.log('Данные от Kirby:', data);
-    console.log('Заголовок:', data.content.title);
+    console.log('Заголовок:', data.title);
   })
   .catch(error => console.error('Что-то пошло не так:', error));
 ```
 
 ## 🛠 Команды для разработки
 
+- **Собрать образ и запустить контейнер:** `docker-compose up -d --build`
+- **Удалить образ и остановить контейнер:** `docker-compose down -v`
 - **Запустить контейнер:** `docker-compose up`
 - **Остановить контейнер:** `docker-compose stop`
 - **Зайти внутрь контейнера:** `docker exec -it kirby-headless bash`
-- **Обновить зависимости:** `docker exec -it kirby-headless composer update`
 - **Просмотр логов:** `docker logs -f kirby-headless`
 
 ## 📦 Работа с плагинами и зависимостями
