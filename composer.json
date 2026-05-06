@@ -25,7 +25,6 @@
     "getkirby/cms": "^5.2",
     "getkirby/cli": "^1.9",
     "johannschopplich/kirby-headless": "^6.0",
-    "beebmx/kirby-env": "^5.1",
     "akh/typograf": "^0.7.0",
     "bnomei/kirby3-janitor": "^5.4",
     "sylvainjule/backups": "^1.1"
