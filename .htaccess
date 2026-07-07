@@ -8,6 +8,9 @@
 # http://yourdomain.com/about-us/team
 RewriteEngine on
 
+# Fix Mixed Content for proxy (Coolify/Traefik)
+SetEnvIf X-Forwarded-Proto https HTTPS=on
+
 # make sure to set the RewriteBase correctly
 # if you are running the site in a subfolder;
 # otherwise links or the entire site will break.
@@ -27,13 +30,13 @@ RewriteEngine on
 RewriteRule (^|/)\.(?!well-known\/) index.php [L]
 
 # block all files in the content folder from being accessed directly
-RewriteRule ^content/(.*) index.php [L]
+RewriteRule ^content/(.*) - [R=403,L]
 
 # block all files in the site folder from being accessed directly
-RewriteRule ^site/(.*) index.php [L]
+RewriteRule ^site/(.*) - [R=403,L]
 
 # block direct access to Kirby and the Panel sources
-RewriteRule ^kirby/(.*) index.php [L]
+RewriteRule ^kirby/(.*) - [R=403,L]
 
 # make site links work
 RewriteCond %{REQUEST_FILENAME} !-f
